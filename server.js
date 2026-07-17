@@ -55,7 +55,10 @@ app.post('/api/calculate_asset_depreciation', (req, res) => {
     });
   }
 
+  const totalDepreciation = costOfAsset - salvageValue;
+
   res.json({
+    totalDepreciation: totalDepreciation,
     yearlyDepreciation: depreciated_value,
     schedule: schedule
   });

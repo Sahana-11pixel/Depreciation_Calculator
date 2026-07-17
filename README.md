@@ -5,9 +5,6 @@ A simple backend API built with Node.js and Express to calculate asset depreciat
 ---
 
 ## What it does
-
-This is a backend-only project. No frontend, no UI — just an API you can hit with any tool like Postman or cURL.
-
 You give it three things — the cost of the asset, how much it'll be worth at the end (salvage value), and how many years you're depreciating it over. It gives back a year-by-year breakdown of how much the asset loses in value each year.
 
 ---
@@ -46,19 +43,29 @@ The API checks for the following before doing any calculation:
 If any of these fail, you get a 400 error with a message explaining exactly what's wrong.
 
 
+## Prerequisites
+
+You only need **Node.js** installed on your system. The setup steps below will automatically download Express and everything else.
+
 ## How to Run
 
 1. Clone the repo
-2. Install dependencies:
+2. Go into the project directory:
+   ```
+   cd Depreciation_Calculator
+   ```
+3. Install dependencies:
    ```
    npm install
    ```
-3. Start the server:
+4. Start the server:
    ```
    npm start
    ```
    Server runs on port 3000 by default.
 
+
+This is a backend-only project. No frontend, no UI — just an API you can hit with any tool like Postman or cURL.
 ---
 
 ## API Endpoint
@@ -83,14 +90,35 @@ If any of these fail, you get a 400 error with a message explaining exactly what
 
 ```json
 {
-  "yearlyDepreciation": 18000,
-  "schedule": [
-    { "year": 1, "depreciation": 18000, "remainingValue": 82000 },
-    { "year": 2, "depreciation": 18000, "remainingValue": 64000 },
-    { "year": 3, "depreciation": 18000, "remainingValue": 46000 },
-    { "year": 4, "depreciation": 18000, "remainingValue": 28000 },
-    { "year": 5, "depreciation": 18000, "remainingValue": 10000 }
-  ]
+    "totalDepreciation": 90000,
+    "yearlyDepreciation": 18000,
+    "schedule": [
+        {
+            "year": 1,
+            "depreciation": 18000,
+            "remainingValue": 82000
+        },
+        {
+            "year": 2,
+            "depreciation": 18000,
+            "remainingValue": 64000
+        },
+        {
+            "year": 3,
+            "depreciation": 18000,
+            "remainingValue": 46000
+        },
+        {
+            "year": 4,
+            "depreciation": 18000,
+            "remainingValue": 28000
+        },
+        {
+            "year": 5,
+            "depreciation": 18000,
+            "remainingValue": 10000
+        }
+    ]
 }
 ```
 
