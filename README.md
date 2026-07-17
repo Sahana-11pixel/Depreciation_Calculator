@@ -83,14 +83,34 @@ If any of these fail, you get a 400 error with a message explaining exactly what
 
 ```json
 {
-  "yearlyDepreciation": 18000,
-  "schedule": [
-    { "year": 1, "depreciation": 18000, "remainingValue": 82000 },
-    { "year": 2, "depreciation": 18000, "remainingValue": 64000 },
-    { "year": 3, "depreciation": 18000, "remainingValue": 46000 },
-    { "year": 4, "depreciation": 18000, "remainingValue": 28000 },
-    { "year": 5, "depreciation": 18000, "remainingValue": 10000 }
-  ]
+    "yearlyDepreciation": 18000,
+    "schedule": [
+        {
+            "year": 1,
+            "depreciation": 18000,
+            "remainingValue": 82000
+        },
+        {
+            "year": 2,
+            "depreciation": 18000,
+            "remainingValue": 64000
+        },
+        {
+            "year": 3,
+            "depreciation": 18000,
+            "remainingValue": 46000
+        },
+        {
+            "year": 4,
+            "depreciation": 18000,
+            "remainingValue": 28000
+        },
+        {
+            "year": 5,
+            "depreciation": 18000,
+            "remainingValue": 10000
+        }
+    ]
 }
 ```
 
