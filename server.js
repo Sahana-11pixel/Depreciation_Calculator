@@ -1,9 +1,16 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
-
+app.set('json spaces', 2);
+app.get("/", (req, res) => {
+  res.send("Asset Depreciation API is running.");
+});
 //get the input from user
 app.post('/api/calculate_asset_depreciation', (req, res) => {
+  // Guard: if body is missing or not an object
+  if (!req.body || typeof req.body !== 'object')
+    return res.status(400).json({ error: "Request body is missing or not valid JSON" });
+
   const { costOfAsset, salvageValue, duration } = req.body;
 
   // 1. Check for missing fields
@@ -52,6 +59,14 @@ app.post('/api/calculate_asset_depreciation', (req, res) => {
     yearlyDepreciation: depreciated_value,
     schedule: schedule
   });
+});
+
+// Global error handler — catches bad JSON sent in body and returns clean JSON error
+app.use((err, req, res, next) => {
+  if (err.type === 'entity.parse.failed') {
+    return res.status(400).json({ error: "Invalid JSON format in request body" });
+  }
+  res.status(500).json({ error: "Something went wrong on the server" });
 });
 
 const port = process.env.PORT || 3000;
