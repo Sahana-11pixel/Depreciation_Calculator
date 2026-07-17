@@ -83,6 +83,7 @@ If any of these fail, you get a 400 error with a message explaining exactly what
 
 ```json
 {
+    "totalDepreciation": 90000,
     "yearlyDepreciation": 18000,
     "schedule": [
         {
