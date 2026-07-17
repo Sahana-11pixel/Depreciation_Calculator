@@ -5,7 +5,7 @@ A simple backend API built with Node.js and Express to calculate asset depreciat
 ---
 
 ## What it does
-You give it three things — the cost of the asset, how much it'll be worth at the end (salvage value), and how many years you're depreciating it over. It gives back a year-by-year breakdown of how much the asset loses in value each year.
+You give it three things — the cost of the asset, how much it'll be worth at the end (salvage value), and how many years you're depreciating it over. It gives back a year-by-year breakdown of how[...]
 
 ---
 
@@ -126,5 +126,9 @@ This is a backend-only project. No frontend, no UI — just an API you can hit w
 
 
 - This is backend only — there's no UI. Use Postman or cURL to test it.
-- If you pass a very large number for duration (like 10000 years), the API will generate that many records in the response. It'll still work but the response will be large and may take a moment. Keep duration to a reasonable number.
+- If you pass a very large number for duration (like 10000 years), the API will generate that many records in the response. It'll still work but the response will be large and may take a moment. [...]
 - All three fields are required. Sending partial data won't work.
+
+---
+
+This project was undertaken as part of a formal recruitment evaluation.
